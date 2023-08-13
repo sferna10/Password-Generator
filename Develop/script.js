@@ -1,43 +1,4 @@
-// var Assignment Code
-var password = "";
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
-var lenghtPassword = passwordLength();
-var passwordInclusionsLenght = passwordInclusionsLenght.length;
-
-for (var i = 0; i < lenghtPassword; i++) {
-  password += passwordInclusionsLenght.charAt(
-    Math.floor(Math.random() * passwordInclusionsLenght)
-  );
-}
-
-return password;
-
-function passwordLength() {
-  var lenghtPass =
-    "enter desired length for new password. It must be between 5 and 14 characters long";
-}
-
-If(lengthPass < 8 || lengthPass > 128 || lenghtPass === "");
-alert("Invalid Length entry. Length must be between 5 and 14 characters long");
-return passwordLength;
-
-lenghtPass = Math.floor(Number(lenghtpass));
-return lenghtPass;
-
-var charaInclusions = function () {
-  var passwordInclusions = "";
-};
 //Characters
-
 var specialcharacters = [
   "!",
   "@",
@@ -112,28 +73,76 @@ var upperCasedCharacters = [
   "M",
 ];
 
+function passwordLength() {
+
+  var lengthPass = parseInt(
+    prompt("enter desired length for new password. It must be between 8 and 128 characters long"),10
+  );
+  
+  console.log(lengthPass)
+
+
+// conditional syntax here
+
+// If(lengthPass < 8 || lengthPass > 128 || lenghtPass === "");
+
+  var numbers = confirm("Do you want numbers in your password?");
+// var special = confirm("Do you want special characters in your password?");
+// var upperCases = confirm("Do you want uppercases in your password?");
+// var lowerCases = confirm("Do you want lowercases in your password?");
+
+};
+
+// var lenghtPassword = passwordLength();
+// var passwordInclusionsLenght = passwordInclusionsLenght.length;
+
+// for (var i = 0; i < lenghtPassword; i++) {
+//   password += passwordInclusionsLenght.charAt(
+//     Math.floor(Math.random() * passwordInclusionsLenght)
+//   );
+// }
+
+// return password;
+
+// lenghtPass = Math.floor(Number(lenghtpass));
+// return lenghtPass;
+
+// var charaInclusions = function () {
+//   var passwordInclusions = "";
+// };
+
+
 // Questions to define password configuration
 
-var numbers = confirm("Do you want numbers in your password?");
-var special = confirm("Do you want special characters in your password?");
-var upperCases = confirm("Do you want uppercases in your password?");
-var lowerCases = confirm("Do you want lowercases in your password?");
 
 //Validation
 
-if (confirmSpecialChar == true) {
-  passwordInclusion += confirmSpecialChar;
-}
-if (confirmnumbers == true) {
-  passwordInclusion += confirmnumbers;
-}
-if (confirmLower == true) {
-  passwordInclusion += confirmLowerCase;
-}
-if (confirmUpper == true) {
-  passwordInclusion += confirmeUpperCase;
-  return passwordInclusions;
+// if (confirmSpecialChar == true) {
+//   passwordInclusion += confirmSpecialChar;
+// }
+// if (confirmnumbers == true) {
+//   passwordInclusion += confirmnumbers;
+// }
+// if (confirmLower == true) {
+//   passwordInclusion += confirmLowerCase;
+// }
+// if (confirmUpper == true) {
+//   passwordInclusion += confirmeUpperCase;
+//   return passwordInclusions;
+// }
+
+function generatePassword() {
+  passwordLength()
+};
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
 }
 
+var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
