@@ -118,8 +118,8 @@ function passwordLength() {
 //   password += passwordInclusionsLenght.charAt(
 //     Math.floor(Math.random() * passwordInclusionsLenght)
 //   );
-return passwordLength;
-// }
+// return passwordLength;
+// 
 
 // lenghtPass = Math.floor(Number(lenghtpass));
 // return lenghtPass;
