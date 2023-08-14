@@ -76,20 +76,38 @@ var upperCasedCharacters = [
 function passwordLength() {
 
   var lengthPass = parseInt(
-    prompt("enter desired length for new password. It must be between 8 and 128 characters long"),10
+    prompt("enter desired length for new password. It must be between 8 and 128 characters long"),
   );
   
   console.log(lengthPass)
 
+  var numberchoice = parseInt(
+    prompt("Do you want numbers in your password?"),
+  );
+ 
+  console.log(numberchoice);
+
+  var specialchar = parseInt(
+    prompt("Do you want special characters in your password?"),
+  );
+ 
+  console.log(specialchar)
+
+  var Upperchoice = parseInt(
+    prompt("Do you want Uppercases in your password?"),
+  );
+ 
+  console.log(choiceUpper)
+
+  var lowerchoice = parseInt(
+    prompt("Do you want lowercases in your password?"),
+  );
+ 
+  console.log(lowerchoice)
 
 // conditional syntax here
 
 // If(lengthPass < 8 || lengthPass > 128 || lenghtPass === "");
-
-  var numbers = confirm("Do you want numbers in your password?");
-// var special = confirm("Do you want special characters in your password?");
-// var upperCases = confirm("Do you want uppercases in your password?");
-// var lowerCases = confirm("Do you want lowercases in your password?");
 
 };
 
