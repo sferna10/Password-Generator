@@ -76,11 +76,16 @@ var upperCasedCharacters = [
 function passwordLength() {
 
   var lengthPass = parseInt(
-    prompt("enter desired length for new password. It must be between 8 and 128 characters long"),10
+    prompt("enter desired length for new password. It must be between 8 and 128 characters long"),
   );
   
   console.log(lengthPass)
 
+  var lengthPass = parseInt(
+    prompt("Do you want numbers in your password?"),
+  );
+ 
+  console.log(lengthPass)
 
 // conditional syntax here
 
