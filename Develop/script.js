@@ -74,42 +74,42 @@ var upperCasedCharacters = [
 ];
 
 function passwordLength() {
-
   var lengthPass = parseInt(
-    prompt("enter desired length for new password. It must be between 8 and 128 characters long"),
+    prompt(
+      "Enter desired length for new password. It must be between 8 and 128 characters long"
+    )
   );
-  
-  console.log(lengthPass)
+
+  console.log(lengthPass);
 
   var numberchoice = parseInt(
-    prompt("Do you want numbers in your password?"),
+    prompt("Which numbers do you want in your password?")
   );
- 
+
   console.log(numberchoice);
 
   var specialchar = parseInt(
-    prompt("Do you want special characters in your password?"),
+    prompt("Which special characters do you want in your password?")
   );
- 
-  console.log(specialchar)
+
+  console.log(specialchar);
 
   var Upperchoice = parseInt(
-    prompt("Do you want Uppercases in your password?"),
+    prompt("Which Uppercases do you want in your password?")
   );
- 
-  console.log(choiceUpper)
+
+  console.log(choiceUpper);
 
   var lowerchoice = parseInt(
-    prompt("Do you want lowercases in your password?"),
+    prompt("Which lowercases do you want in your password?")
   );
- 
-  console.log(lowerchoice)
 
-// conditional syntax here
+  console.log(lowerchoice);
 
-// If(lengthPass < 8 || lengthPass > 128 || lenghtPass === "");
+  // conditional syntax here
 
-};
+  // If(lengthPass < 8 || lengthPass > 128 || lenghtPass === "");
+}
 
 // var lenghtPassword = passwordLength();
 // var passwordInclusionsLenght = passwordInclusionsLenght.length;
@@ -118,9 +118,8 @@ function passwordLength() {
 //   password += passwordInclusionsLenght.charAt(
 //     Math.floor(Math.random() * passwordInclusionsLenght)
 //   );
+return passwordLength;
 // }
-
-// return password;
 
 // lenghtPass = Math.floor(Number(lenghtpass));
 // return lenghtPass;
@@ -128,10 +127,6 @@ function passwordLength() {
 // var charaInclusions = function () {
 //   var passwordInclusions = "";
 // };
-
-
-// Questions to define password configuration
-
 
 //Validation
 
@@ -150,8 +145,8 @@ function passwordLength() {
 // }
 
 function generatePassword() {
-  passwordLength()
-};
+  passwordLength();
+}
 
 // Write password to the #password input
 function writePassword() {
