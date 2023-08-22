@@ -1,5 +1,5 @@
 //Characters
-var specialcharacters = [
+var specialChars = [
   "!",
   "@",
   "#",
@@ -15,8 +15,8 @@ var specialcharacters = [
   "?",
   "?",
 ];
-var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var lowerCasedCharacters = [
+var num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var lower = [
   "q",
   "w",
   "e",
@@ -44,7 +44,7 @@ var lowerCasedCharacters = [
   "n",
   "m",
 ];
-var upperCasedCharacters = [
+var upper = [
   "Q",
   "W",
   "E",
@@ -73,6 +73,18 @@ var upperCasedCharacters = [
   "M",
 ];
 
+// This is the empty array that we are going use to add the choices the user selected
+var passwordChoices = [];
+var password = "";
+
+// Originally, your conditional statement was not in your function, giving it a global scope
+
+// var combination=upper+lower+specialChars+num;
+
+//conditional syntax
+
+// if (condition) {
+
 function passwordLength() {
   var lengthPass = parseInt(
     prompt(
@@ -82,35 +94,61 @@ function passwordLength() {
 
   console.log(lengthPass);
 
-  var numberchoice = parseInt(
-    prompt("Which numbers do you want in your password?")
-  );
+  // this is your conditional
+  if (lengthPass < 8 || lengthPass > 128 || lengthPass === "") {
+    // if the condition is met, the code inside the curly brackets will execute
+    // write the code that you want to occur if the password is less than 8, greater than 128, or empty
+    prompt("You did not select a valid password length");
+  } else {
+    var number = confirm("Do you want numbers in your password?");
+    // We used confirm instead of prompt because it eliminates user error
+    // console.log(number);
 
-  console.log(numberchoice);
+    var specialChar = confirm(
+      "Do you want special characters in your password?"
+    );
 
-  var specialchar = parseInt(
-    prompt("Which special characters do you want in your password?")
-  );
+    // console.log(specialChar);
 
-  console.log(specialchar);
+    var upperCase = confirm("Do you want Uppercase letters in your password?");
 
-  var Upperchoice = parseInt(
-    prompt("Which Uppercases do you want in your password?")
-  );
+    // console.log(upperCase);
 
-  console.log(choiceUpper);
+    var lowerCase = confirm("Do you want lowercase letters in your password?");
+    // Confirms allow users to click okay or cancel, okay returns "true", cancel returns "false"
+    // With a prompt, users can type anything. This is an issue because what if they have a typo? "yess"
 
-  var lowerchoice = parseInt(
-    prompt("Which lowercases do you want in your password?")
-  );
+    // console.log(lowerCase);
 
-  console.log(lowerchoice);
+    // How can we take the user's response and use it to add the choices they selected?
+    if (number === true) {
+      // passwordChoices = nums+specialChar
+      passwordChoices = passwordChoices.concat(num);
+    }
+    if (specialChar === true) {
+      passwordChoices = passwordChoices.concat(specialChars);
+    }
+    if (lowerCase === true) {
+      passwordChoices = passwordChoices.concat(lower);
+    }
+    if (upperCase === true) {
+      passwordChoices = passwordChoices.concat(upper);
+    }
+    // Create the conditional for all the choices
 
-  // conditional syntax here
+    console.log(passwordChoices);
 
-  // If(lengthPass < 8 || lengthPass > 128 || lenghtPass === "");
+    // var passwordInclusionsLenght = passwordInclusionsLenght.length;
+    for (var i = 0; i < lengthPass; i++) {
+      password +=
+        passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
+      console.log(password);
+      // .charAt() is a method for strings, we needed to change it to work with arrays
+    }
+  }
+  // This allows us to return the updated value of the password variable
+  return password;
 }
-
 // var lenghtPassword = passwordLength();
 // var passwordInclusionsLenght = passwordInclusionsLenght.length;
 
@@ -119,7 +157,7 @@ function passwordLength() {
 //     Math.floor(Math.random() * passwordInclusionsLenght)
 //   );
 // return passwordLength;
-// 
+//
 
 // lenghtPass = Math.floor(Number(lenghtpass));
 // return lenghtPass;
@@ -133,7 +171,7 @@ function passwordLength() {
 // if (confirmSpecialChar == true) {
 //   passwordInclusion += confirmSpecialChar;
 // }
-// if (confirmnumbers == true) {
+// if (confirmnums == true) {
 //   passwordInclusion += confirmnumbers;
 // }
 // if (confirmLower == true) {
@@ -145,7 +183,8 @@ function passwordLength() {
 // }
 
 function generatePassword() {
-  passwordLength();
+  // We know that the passwordLength function returns password
+  return passwordLength();
 }
 
 // Write password to the #password input
